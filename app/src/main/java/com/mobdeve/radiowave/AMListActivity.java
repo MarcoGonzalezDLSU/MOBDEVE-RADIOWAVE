@@ -17,10 +17,10 @@ public class AMListActivity extends AppCompatActivity {
 
         RecyclerView AMrecyclerview = findViewById(R.id.AMrecyclerview);
         AMradiostationsClass[] amradiostations = new AMradiostationsClass[]{
-                new AMradiostationsClass("TeleRadyo","www.link1.com"),
-                new AMradiostationsClass("Super Radyo DZBB","www.link2.com"),
-                new AMradiostationsClass("Radio Veritas","www.link3.com"),
-                new AMradiostationsClass("Radyo La Verdad","www.link4.com"),
+                new AMradiostationsClass("TeleRadyo","https://28103.live.streamtheworld.com/DZMM_SC"),
+                new AMradiostationsClass("Super Radyo DZBB","https://28103.live.streamtheworld.com/DZMM_SC"),
+                new AMradiostationsClass("Radio Veritas","http://28103.live.streamtheworld.com/DZMM_SC"),
+                new AMradiostationsClass("Radyo La Verdad","http://radio.abc.net.au/live/rnmp3"),
         };
         AMrecyclerview.setLayoutManager(new LinearLayoutManager(this));
         AMrecyclerview.setAdapter(new MyAdapter(getApplicationContext(),amradiostations));
