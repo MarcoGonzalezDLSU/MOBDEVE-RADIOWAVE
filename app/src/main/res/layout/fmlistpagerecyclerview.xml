@@ -20,4 +20,31 @@
         app:srcCompat="@drawable/rvimgstationcontainer"
         tools:ignore="ContentDescription,MissingConstraints"
         tools:layout_editor_absoluteY="-1dp" />
+
+    <TextView
+        android:id="@+id/tvfmstation_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/imageView"
+        android:layout_alignEnd="@+id/imageView"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="1dp"
+        android:text="X"
+        android:textAlignment="center"
+        android:textSize="23sp" />
+
+    <TextView
+        android:id="@+id/tvfmstation_link"
+        android:layout_width="343dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvfmstation_name"
+        android:layout_alignStart="@+id/imageView"
+        android:layout_alignEnd="@+id/tvfmstation_name"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="-68dp"
+        android:layout_marginEnd="1dp"
+        android:text="X"
+        android:textSize="5sp" />
 </RelativeLayout>
