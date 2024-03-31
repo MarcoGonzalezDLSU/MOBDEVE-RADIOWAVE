@@ -5,12 +5,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/ivlistpagebackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:srcCompat="@drawable/imagebackground"
+        tools:layout_editor_absoluteX="201dp"
+        tools:layout_editor_absoluteY="16dp"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/ivradiowavelogo"
+        android:layout_width="149dp"
+        android:layout_height="149dp"
+        android:layout_marginTop="44dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/imagelogo"
+        tools:ignore="ContentDescription" />
+
     <Button
         android:id="@+id/ambtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="120dp"
+        android:layout_width="183dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="404dp"
+        android:backgroundTint="#3CCD95"
         android:text="AM"
+        android:textColor="#000000"
+        android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -18,11 +41,42 @@
 
     <Button
         android:id="@+id/fmbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="183dp"
+        android:layout_height="69dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#3CCD95"
         android:text="FM"
+        android:textColor="#000000"
+        android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ambtn"
         tools:ignore="HardcodedText,MissingConstraints" />
+
+    <TextView
+        android:id="@+id/tvDescription"
+        android:layout_width="313dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="24dp"
+        android:text="To listen ti a station, select between AM and FM"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle" />
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="RadioWave"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="45dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivradiowavelogo" />
 </androidx.constraintlayout.widget.ConstraintLayout>

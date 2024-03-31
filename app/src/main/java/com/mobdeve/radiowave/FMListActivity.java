@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 
 public class FMListActivity extends AppCompatActivity {
@@ -24,7 +23,7 @@ public class FMListActivity extends AppCompatActivity {
                 new FMradiostationsClass("99.5 Play FM","www.link4.com"),
         };
         FMrecyclerview.setLayoutManager(new LinearLayoutManager(this));
-        FMrecyclerview.setAdapter(new MyAdapter(getApplicationContext(),fmradiostations));
+        FMrecyclerview.setAdapter(new MyAdapterFM(getApplicationContext(),fmradiostations));
 
         btnam = (ImageButton) findViewById(R.id.btnToAM);
         btnam.setOnClickListener(new View.OnClickListener() {

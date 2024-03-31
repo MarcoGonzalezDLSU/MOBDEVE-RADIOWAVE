@@ -12,25 +12,30 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Button;
 
-
 public class MainActivity extends AppCompatActivity {
-
+    Button btnam;
+    Button btnfm;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.amlistpage);//CHANGE THIS TO activity_main once menu page is done
+        setContentView(R.layout.activity_main);
+        btnam = (Button) findViewById(R.id.ambtn);
+        btnam.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent( MainActivity.this, AMListActivity.class);
+                startActivity(intent);
+            }
+        });
 
-        RecyclerView AMrecyclerview = findViewById(R.id.AMrecyclerview);
 
-        AMradiostationsClass[] amradiostations = new AMradiostationsClass[]{
-                new AMradiostationsClass("TeleRadyo","www.link1.com"),
-                new AMradiostationsClass("Super Radyo DZBB","www.link2.com"),
-                new AMradiostationsClass("Radio Veritas","www.link3.com"),
-                new AMradiostationsClass("Radyo La Verdad","www.link4.com"),
-        };
-
-        AMrecyclerview.setLayoutManager(new LinearLayoutManager(this));
-        AMrecyclerview.setAdapter(new MyAdapter(getApplicationContext(),amradiostations));
+        btnfm = (Button) findViewById(R.id.fmbtn);
+        btnfm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent( MainActivity.this, FMListActivity.class);
+                startActivity(intent);
+            }
+        });
     }
-
 }
