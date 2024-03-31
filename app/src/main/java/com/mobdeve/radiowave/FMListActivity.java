@@ -33,6 +33,5 @@ public class FMListActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
     }
 }
