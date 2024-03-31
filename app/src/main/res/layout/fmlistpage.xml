@@ -34,12 +34,13 @@
         android:id="@+id/FMrecyclerview"
         android:layout_width="411dp"
         android:layout_height="459dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="124dp"
         app:layout_constraintBottom_toBottomOf="@+id/ivlistpagebackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnToAM"
+        tools:ignore="UnknownIdInLayout"
         tools:listitem="@layout/fmlistpagerecyclerview" />
 
     <TextView

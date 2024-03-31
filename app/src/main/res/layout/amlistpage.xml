@@ -34,12 +34,14 @@
         android:id="@+id/AMrecyclerview"
         android:layout_width="411dp"
         android:layout_height="459dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="128dp"
+
         app:layout_constraintBottom_toBottomOf="@+id/ivlistpagebackground"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnToFM"
+        tools:ignore="UnknownIdInLayout"
         tools:listitem="@layout/amlistpagerecyclerview" />
 
     <TextView
