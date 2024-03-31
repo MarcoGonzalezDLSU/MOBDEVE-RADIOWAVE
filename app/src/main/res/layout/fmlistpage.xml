@@ -31,7 +31,7 @@
         android:layout_width="299dp"
         android:layout_height="57dp"
         android:layout_marginTop="32dp"
-        android:background="@drawable/btntoam_selector"
+        android:background="@drawable/btntofm_selector"
         android:foreground="?android:attr/selectableItemBackground"
         android:scaleType="centerInside"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,7 +39,7 @@
         tools:ignore="ContentDescription,MissingConstraints" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvfm"
+        android:id="@+id/FMrecyclerview"
         android:layout_width="411dp"
         android:layout_height="459dp"
         android:layout_marginTop="24dp"
