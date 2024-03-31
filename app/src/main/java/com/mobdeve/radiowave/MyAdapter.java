@@ -9,9 +9,14 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private Context context;
     private AMradiostationsClass[] amradiostations;
+    private Executor executor = Executors.newCachedThreadPool();
 
     public MyAdapter(Context context, AMradiostationsClass[] amradiostations) {
         this.context = context;
@@ -28,6 +33,15 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.bind(position);
+        AMradiostationsClass station = amradiostations[position];
+        holder.tvAMstationname.setText(station.getstationname());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                executor.execute(new PlayAudioTask(station.getstationlink()));
+            }
+        });
     }
 
     @Override
