@@ -51,7 +51,7 @@
         android:layout_width="313dp"
         android:layout_height="66dp"
         android:layout_marginTop="24dp"
-        android:text="To listen ti a station, select between AM and FM"
+        android:text="To listen to a station, select between AM and FM"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="25dp"
