@@ -1,14 +1,15 @@
 package com.mobdeve.radiowave;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.widget.ImageView;
-import android.widget.TextView;
 
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
@@ -31,6 +32,10 @@ public class MyAdapterFM extends RecyclerView.Adapter<MyAdapterFM.ViewHolder> {
     }
 
     @Override
+
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        holder.bind(fmradiostations[position]);
+
     public void onBindViewHolder(@NonNull MyAdapterFM.ViewHolder holder, int position) {
         holder.bind(position);
         FMradiostationsClass station = fmradiostations[position];
@@ -42,6 +47,7 @@ public class MyAdapterFM extends RecyclerView.Adapter<MyAdapterFM.ViewHolder> {
                 executor.execute(new PlayAudioTask(station.getstationlink()));
             }
         });
+
     }
 
     @Override
@@ -49,7 +55,7 @@ public class MyAdapterFM extends RecyclerView.Adapter<MyAdapterFM.ViewHolder> {
         return fmradiostations.length;
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         ImageView imageView;
         TextView tvFMstationname;
         TextView tvFMstationlink;
@@ -59,10 +65,12 @@ public class MyAdapterFM extends RecyclerView.Adapter<MyAdapterFM.ViewHolder> {
             imageView = itemView.findViewById(R.id.imageView);
             tvFMstationname = itemView.findViewById(R.id.tvFMstationname);
             tvFMstationlink = itemView.findViewById(R.id.tvFMstationlink);
+
+            // Set click listener on the item
+            itemView.setOnClickListener(this);
         }
 
-        public void bind(int position) {
-            FMradiostationsClass station = fmradiostations[position];
+        public void bind(FMradiostationsClass station) {
             // Set the station name
             tvFMstationname.setText(station.getstationname());
             // Set the station link
@@ -70,5 +78,19 @@ public class MyAdapterFM extends RecyclerView.Adapter<MyAdapterFM.ViewHolder> {
             // Set the station image
             imageView.setImageResource(R.drawable.rvimgstationcontainer); // Assuming you have a default image in your drawable folder
         }
+
+        @Override
+        public void onClick(View v) {
+            // Handle item click
+            int position = getAdapterPosition();
+            if (position != RecyclerView.NO_POSITION) {
+                // Navigate to FMPlayerActivity
+                Intent intent = new Intent(context, FMListActivity.class);
+                // Pass any necessary data to the activity
+                intent.putExtra("station_name", fmradiostations[position].getstationname());
+                context.startActivity(intent);
+            }
+        }
+
     }
 }
